@@ -3,8 +3,8 @@ const Schema = mongoose.Schema;
 
 var urlStorageSchema = new Schema(
   {
-    short_url: Number,
-    original_url: String
+    original_url: String,
+    short_url: Number
   },
   { collection: "UrlStorage" }
 );

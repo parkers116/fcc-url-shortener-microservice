@@ -79,3 +79,18 @@ exports.postNewUrl = (req, res) => {
     });
   }
 };
+
+exports.getUrl = (req, res) => {
+  let UrlStorage = mongoose.model("UrlStorage");
+  UrlStorage.findOne({ short_url: req.params.short_url }, (err, data) => {
+    if (err) {
+      console.error(err);
+      return;
+    }
+    if (data) {
+      res.redirect(data.original_url);
+    } else {
+      res.json({ error: "invalid URL" });
+    }
+  });
+};

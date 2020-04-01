@@ -47,7 +47,7 @@ app.post("/api/shorturl/new", (req, res) => {
 });
 
 app.get("/api/shorturl/:short_url", (req, res) => {
-  // urlController.getUrl(req, res);
+  urlController.getUrl(req, res);
 });
 
 app.listen(port, function() {
