@@ -1,11 +1,11 @@
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
 var countSchema = new Schema(
-    {
-        count: Number,
-    },
-    { collection: 'count' }
-)
+  {
+    count: { type: Number, default: 1 }
+  },
+  { collection: "count" }
+);
 
-mongoose.model('count', countSchema)
+mongoose.model("Count", countSchema);
